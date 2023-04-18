@@ -2,45 +2,53 @@
 # _Chapter 01 - Inception_
 
 ## Q: What is `Emmet`?
-ans: Emmet is tool that helps developers write HTML and CSS code more quickly and easily. It works by letting developers use short abbreviations instead of typing out long lines of code. Then with the click of button or the press of a key, Emmet can expand these abbreviations into full HTML and CSS code. This can save a lot of time and make coding less tedious.
+A: `Emmet` is the essential toolkit for web-developers. It allows you to `type shortcuts` that are then expanded into full pieces of code for writing `HTML and CSS`, based on an abbreviation structure most developers already use that expands into full-fledged HTML markup and CSS rules.
+
+
+## Q: Difference between a `Library and Framework`?
+A: A `library` is a collection of packages that perform specific operations whereas a `framework` contains the basic flow and architecture of an application. The major difference between them is the complexity. Libraries contain a number of methods that a developer can just call whenever they write code. React js is library and Angular is Framework.
+The `framework` provides the flow of a software application and tells the developer what it needs and calls the code provided by the developer as required. If a `library` is used, the application calls the code from the library.
 
 
 ## Q: What is `CDN`? Why do we use it?
-ans: A `CDN (Content Delivery Network)` is a network of servers distributed across various geographical locations that work together to deliver content (such as images, videos, or other files) to users more efficiently and quickly.
+A: A `content delivery network (CDN)` refers to a geographically distributed group of servers that work together to provide fast delivery of Internet content.
+The main use of a CDN is to deliver content through a network of servers in a secure and efficient way.
 
-Here's an example of how a CDN works:
 
-When you visit a website that uses a CDN to deliver its content, your request for a file (such as an image) is automatically routed to the nearest server within the CDN. This server then retrieves the file from the website's origin server and delivers it to your browser. Since the server is closer to you, the file is delivered more quickly and efficiently than if it had to travel a longer distance from the website's origin server.
-
-CDNs are used for a number of reasons, including:
-
-    1.Improved website performance: By delivering content from servers that are closer to users, CDNs can improve website load times and reduce latency, which can lead to a better user experience.
-
-    2.Reduced server load: CDNs can help reduce the load on a website's origin server by distributing content across multiple servers. This can help prevent server overload and improve website uptime.
-
-    3.Increased scalability: CDNs can help websites handle large amounts of traffic more easily by distributing content across multiple servers.
-
-Overall, CDNs help make the internet faster and more reliable for users by delivering content more efficiently and reducing website downtime.
+## Q: Why is `React known as React`?
+A: `React` is named React because of its ability to `react to changes in data`.
+React is called React because it was designed to be a declarative, efficient, and flexible JavaScript library for building user interfaces.
+The name `React` was chosen because the library was designed to allow developers to "react" to changes in state and data within an application, and to update the user interface in a declarative and efficient manner.
+`React` is a `JavaScript-based UI development library`. `Facebook` and an `open-source developer community` run it.
 
 
 ## Q: What is `crossorigin in script tag`?
-ans : When you include a JavaScript file on a webpage using a `<script>` tag, the browser downloads and executes that file. If the file is hosted on the same domain as the webpage, the browser assumes that it can be trusted and runs it without any issues.
+A: The `crossorigin` attribute sets the mode of the request to an HTTP CORS Request. 
+The purpose of crossorigin attribute is used to share the resources from one domain to another domain. Basically, it is used to handle the CORS request. It is used to handle the CORS request that checks whether it is safe to allow for sharing the resources from other domains.
+### _Syntax_
+```sh
+<script crossorigin="anonymous|use-credentials">
+```
 
-However, if the file is hosted on a different domain than the webpage, the browser needs to determine whether it can trust that file. This is where the crossorigin attribute comes in.
+## Q: What is difference between `React and ReactDOM`?
+A: `React` is a JavaScript library for building User Interfaces whereas `ReactDOM` is also JavaScript library that allows `React to interact with the DOM`.
+The react package contains `React.createElement()`, `React.Component`, `React.Children`, and other helpers related to elements and component classes. You can think of these as the isomorphic or universal helpers that you need to build components. The react-dom package contains `ReactDOM.render()`, and in react-dom/server we have server-side rendering support with `ReactDOMServer.renderToString()` and `ReactDOMServer.renderToStaticMarkup()`.
 
-By setting the `crossorigin` attribute to either `anonymous` or `use-credentials`, you are telling the browser whether or not the JavaScript file can be trusted to access sensitive data (such as cookies) on the user's browser.
 
-If you set `crossorigin="anonymous"`, the browser will download and execute the script, but will not allow it to access any sensitive data on the user's browser. This is useful if you are loading a script from a third-party domain that you don't completely trust.
+## Q: What is difference between `react.development.js` and `react.production.js` files via `CDN`?
+A: `Development` is the stage of an application before it's made public while `production` is the term used for the same application when it's made `public`.
+`Development build` is several times (maybe 3-5x) `slower` than the `production build`.
 
-If you set `crossorigin="use-credentials"`, the browser will download and execute the script, and will allow it to access sensitive data on the user's browser. This is useful if you are loading a script from a trusted domain that needs to access sensitive data on the user's browser.
 
-When `crossorigin` is specified without a value, it defaults to `anonymous`.
+## Q: What is `async and defer`?
+A: `Async` - The async attribute is a `boolean attribute`. The script is downloaded in `parallel(in the background)` to parsing the page, and `executed as soon` as it is available (do not block HTML DOM construction during downloading process) and don’t wait for anything.
+### _Syntax_
+```sh
+<script src="demo_async.js" async></script>
+```
 
-## Why React created two different CDN files ?
-React was initially designed for use in web applications, and it was packaged as a single library that included everything needed for rendering components in a web browser.
-
-However, when React was introduced for mobile development, a separate library called React Native was created. This is because mobile apps have different requirements than web apps, and React Native was designed specifically for mobile development.
-
-To support the creation of React Native, React was split into two separate libraries: React and ReactDOM. React contains the core functionality of React and can be used in both web and mobile applications. ReactDOM is a library specifically designed for rendering React components in web applications.
-
-By separating React and ReactDOM, developers can write components that can be shared between the web version of React and React Native, allowing for more efficient code reuse and easier maintenance.
+`Defer` - The defer attribute is a `boolean attribute`. The script is downloaded in `parallel(in the background)` to parsing the page, and `executed after the page` has finished parsing(when browser finished DOM construction). The `defer attribute` tells the browser `not to wait for the script`. Instead, the browser will continue to process the HTML, build DOM.
+### _Syntax_
+```sh
+<script src="demo_defer.js" defer></script>
+```
